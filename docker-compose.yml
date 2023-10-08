@@ -1,7 +1,6 @@
 version: "3"
 
 services:
-
   monitoring:
     build:
       context: monitoring
@@ -10,3 +9,12 @@ services:
     volumes:
       - ./monitoring:/app
     command: python3 monitor.py
+
+  ml_models:
+    build:
+      context: models_eval
+      dockerfile: Dockerfile
+    container_name: ml_models-service
+    volumes:
+      - ./models_eval:/app
+    command: ./run.sh
