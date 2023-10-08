@@ -16,7 +16,9 @@ RUN pip3 install torch torchvision torchaudio --index-url https://download.pytor
 
 RUN pip3 install transformers
 
-RUN apt update && apt install ffmpeg -y
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt-get install -y --no-install-recommends ffmpeg
 RUN pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
 
 WORKDIR /app
