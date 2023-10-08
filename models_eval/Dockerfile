@@ -19,7 +19,6 @@ RUN pip3 install transformers
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt-get install -y --no-install-recommends ffmpeg
-RUN pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
-RUN pip install setuptools-rust
+RUN pip install git+https://github.com/openai/whisper.git
 
 WORKDIR /app
