@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  monitoring:
+    build:
+      context: monitoring
+      dockerfile: Dockerfile
+    container_name: monitoring-service
+    volumes:
+      - ./monitoring:/app
+      - ./monitoring/logs:/app
+    command: python3 monitor.py
