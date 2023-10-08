@@ -11,7 +11,7 @@ run_count: int = 0
 start_time = time.time()
 while run_count < X:
     # load audio and pad/trim it to fit 30 seconds
-    audio = whisper.load_audio("./audios/ahmad.mp3")
+    audio = whisper.load_audio("./audios/ahmad.wav")
     audio = whisper.pad_or_trim(audio)
 
     # make log-Mel spectrogram and move to the same device as the model
