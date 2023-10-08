@@ -5,7 +5,7 @@ from transformers import RobertaTokenizer, RobertaModel
 tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
 model = RobertaModel.from_pretrained("roberta-base")
 
-X = 1000
+X = 50
 
 run_count: int = 0
 start_time = time.time()

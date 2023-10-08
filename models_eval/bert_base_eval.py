@@ -5,7 +5,7 @@ from transformers import BertTokenizer, BertModel
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 model = BertModel.from_pretrained("bert-base-uncased")
 
-X = 1000
+X = 50
 
 run_count: int = 0
 start_time = time.time()
