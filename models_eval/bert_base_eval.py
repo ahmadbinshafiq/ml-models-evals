@@ -3,9 +3,9 @@ from transformers import BertTokenizer, BertModel
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 model = BertModel.from_pretrained("bert-base-uncased")
 
-X = 10
+X = 1000
 
-run_count = 0
+run_count: int = 0
 while run_count < X:
     text = "Replace me by any text you'd like."
     encoded_input = tokenizer(text, return_tensors="pt")
