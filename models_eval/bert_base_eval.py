@@ -5,7 +5,7 @@ from transformers import BertTokenizer, BertModel
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 model = BertModel.from_pretrained("bert-base-uncased")
 
-X = 50
+X = 1000
 
 run_count: int = 0
 start_time = time.time()
@@ -19,7 +19,7 @@ while run_count < X:
 
 end_time = time.time()
 print(
-    f"bert_base_uncased  --  Total time taken: {end_time - start_time} seconds",
+    f"bert_base_uncased  --  Total time taken: {end_time - start_time} seconds for {X} runs",
     flush=True,
 )
 
