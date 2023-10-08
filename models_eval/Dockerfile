@@ -20,5 +20,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt-get install -y --no-install-recommends ffmpeg
 RUN pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
+RUN pip install setuptools-rust
 
 WORKDIR /app
