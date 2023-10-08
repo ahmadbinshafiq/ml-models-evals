@@ -1,7 +1,7 @@
-from transformers import BertTokenizer, BertModel
+from transformers import RobertaTokenizer, RobertaModel
 
-tokenizer = BertTokenizer.from_pretrained("roberta-base")
-model = BertModel.from_pretrained("roberta-base")
+tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
+model = RobertaModel.from_pretrained("roberta-base")
 
 X = 1000
 
