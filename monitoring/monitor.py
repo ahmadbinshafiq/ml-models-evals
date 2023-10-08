@@ -2,7 +2,7 @@ import os
 import psutil
 import time
 
-LOGS_DIR = "logs"
+LOGS_DIR = "/app/logs"
 BASE_MONITORING_FILENAME = "logs_"
 
 
@@ -19,7 +19,10 @@ def get_monitoring_filename(monitoring_filename_prefix):
 def monitor():
     os.makedirs(LOGS_DIR, exist_ok=True)
     filename = get_monitoring_filename(f"{LOGS_DIR}/{BASE_MONITORING_FILENAME}")
+    filename = os.path.abspath(filename)
 
+    print(os.getcwd(), os.listdir(), flush=True)
+    print(os.path.abspath(filename), flush=True)
     print(f"monitoring system usage to {filename}", flush=True)
 
     with open(filename, "w") as f:
@@ -30,6 +33,7 @@ def monitor():
             f.write(
                 f"ram usage: {ram_percent}%,  disk usage: {disk_percent}%,  cpu usage: {cpu_percent}%\n"
             )
+            f.flush()
             time.sleep(0.25)
 
             print(
