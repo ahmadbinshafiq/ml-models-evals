@@ -7,7 +7,7 @@ openai/whisper-large
 """
 
 MODEL_NAME = "openai/whisper-medium"
-access_token = "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"  # your HF token here
+access_token = ""  # your HF token here
 
 """## Load Dataset
 
